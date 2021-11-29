@@ -21,4 +21,6 @@ This is a Jupyter Notebook showing the Exploratory Data Analysis and the model m
   - Exited: Binary flag 1 if the customer closed account with bank and 0 if the customer is retained
 
 ### Modelling:
+### Results:
+![](https://github.com/AnityaGan9urde/Bank-Customer-Analysis-and-Churn-Prediction/__results___91_2.jpg)
 
