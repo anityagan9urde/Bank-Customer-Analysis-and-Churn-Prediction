@@ -45,8 +45,16 @@ This is a Jupyter Notebook showing the Exploratory Data Analysis and the model m
 ### Results:
 - Plot for ROC-AUC curves for different models(columns), for training and testing datasets(rows):
 ![](https://github.com/AnityaGan9urde/Bank-Customer-Analysis-and-Churn-Prediction/blob/main/__results___91_2.jpg)<br>
-- The above three plots give the ROC AUC curve for the training sets and the below three plots for the testing sets. It can be observed that the curve for training set is more smooth as compared to the curves for the testing sets.
-- For the XG-Boost model trained without cross validation and hyperparameter tuning(middle column), the training AUC score is **0.95** but while testing it falls to **0.81**, suggesting that the model must have overfit to the data.
-- In the third column, the XG-Boost model which used cross validation during training and was hyper tuned, the training score was **0.88** and the testing score was **0.84**, suggesting that the model did not overfit that much to the training data and hence the testing score was the highest among all three models.
-#### Thus, we can observe that the AUC score improved substantially due to XG-Boost paired with the fine tuning and cross validation.
+
+The above two plots give the ROC AUC curve for the training set and for the testing set. It can be observed that the curve for training set is more smooth as compared to the curves for the testing sets.
+For the XG-Boost model trained without cross validation and hyperparameter tuning, the training AUC score is 0.95 but while testing it falls to 0.81, suggesting that the model must have overfit to the data.
+For the XG-Boost model which used cross validation during training and was hyper tuned, the training score was 0.88 and the testing score was 0.84, suggesting that the model did not overfit to the training data and hence the testing score was the highest among all three models.
+Overall, the Hypertuned XG-Boost model performs the best among other models on testing set.
+An excerpt from this article referenced:
+
+    The example presented above clearly shows that an imbalanced data set with a large fraction of persons without disease in the test population will make a ROC curve look better than it would in a balanced data set with fewer persons without disease.
+
+This suggests that the ROC curves automatically shows better performance when the dataset is imbalanced as compared to when the dataset in not imbalanced. Hence, relying just on ROCs would not be good for understanding the model performance.
+The above two figures show Precision Recall Curves for training and testing datasets on different models. The curve above the other curve has a better performance level.
+First figure shows the XGBClassifier model as performing the best but it is clearly overfitting to the data as seen in the second figure where the GridSearchCV i.e. the hypertuned and cross-validated model comes on top.
 
