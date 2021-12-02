@@ -5,20 +5,20 @@ This is a Jupyter Notebook showing the Exploratory Data Analysis and the model m
 - I've done this analysis on a Kaggle Dataset which is available here: https://www.kaggle.com/shrutimechlearn/churn-modelling
 - The dataset is a Bank Customer dataset with target values showing if that customer has left the bank or closed their accounts.
 - **Features:**
-  - CustomerId: Unique Ids for bank customer identification
-  - Surname: Customer's last name
-  - CreditScore: Credit score of the customer
-  - Geography: The country from which the customer belongs
-  - Gender: Male or Female
-  - Age: Age of the customer
-  - Tenure: Number of years for which the customer has been with the bank
-  - Balance: Bank balance of the customer
-  - NumOfProducts: Number of bank products the customer is utilising
-  - HasCrCard: Binary Flag for whether the customer holds a credit card with the bank or not
-  - IsActiveMember: Binary Flag for whether the customer is an active member with the bank or not
-  - EstimatedSalary: Estimated salary of the customer in Dollars
+  - *CustomerId*: Unique Ids for bank customer identification
+  - *Surname*: Customer's last name
+  - *CreditScore*: Credit score of the customer
+  - *Geography*: The country from which the customer belongs
+  - *Gender*: Male or Female
+  - *Age*: Age of the customer
+  - *Tenure*: Number of years for which the customer has been with the bank
+  - *Balance*: Bank balance of the customer
+  - *NumOfProducts*: Number of bank products the customer is utilising
+  - *HasCrCard*: Binary Flag for whether the customer holds a credit card with the bank or not
+  - *IsActiveMember*: Binary Flag for whether the customer is an active member with the bank or not
+  - *EstimatedSalary*: Estimated salary of the customer in Dollars
 - **Target:**
-  - Exited: Binary flag 1 if the customer closed account with bank and 0 if the customer is retained
+  - *Exited*: Binary flag 1 if the customer closed account with bank and 0 if the customer is retained
 
 ### Data Wrangling, Feature Engineering and EDA:
 - The dataset had a total of 4 categorical features- *Geography, Gender, HasCrCard, IsActiveMember*; 6 numerical features- *CreditScore, Age, Tenure, Balance, NumOfProducts, EstimatedSalary.*
@@ -49,14 +49,14 @@ This is a Jupyter Notebook showing the Exploratory Data Analysis and the model m
 - #### Plot for ROC-AUC curves for different models, for training and testing datasets:<br>
 ![](https://github.com/AnityaGan9urde/Bank-Customer-Analysis-and-Churn-Prediction/blob/main/images/__results___93_1.jpg)<br>
   - The above two plots give the ROC AUC curve for the training set and for the testing set. It can be observed that the curve for training set is more smooth as compared to the curves for the testing sets.
-  - For the XG-Boost model trained without cross validation and hyperparameter tuning, the training AUC score is 0.95 but while testing it falls to 0.81, suggesting that the model must have overfit to the data.
-  - For the XG-Boost model which used cross validation during training and was hyper tuned, the training score was 0.88 and the testing score was 0.84, suggesting that the model did not overfit to the training data and hence the testing score was the highest among all three models.
+  - For the XG-Boost model trained without cross validation and hyperparameter tuning, the training AUC score is **0.95** but while testing it falls to **0.81**, suggesting that the model must have overfit to the data.
+  - For the XG-Boost model which used cross validation during training and was hyper tuned, the training score was **0.88** and the testing score was **0.84**, suggesting that the model did not overfit that much to the training data and hence the testing score was the highest among all three models.
   - Overall, the Hypertuned XG-Boost model performs the best among other models on testing set.  <br>
  
 - #### Plot for Precision Recall curves for different models, for training and testing datasets:<br>
 ![](https://github.com/AnityaGan9urde/Bank-Customer-Analysis-and-Churn-Prediction/blob/main/images/__results___95_1.jpg)<br>
   - The article on PRC curves referenced suggests that the ROC curves automatically shows better performance when the dataset is imbalanced as compared to when the dataset in not imbalanced. Hence, relying just on ROCs would not be good for understanding the model performance.
-  - The above two figures show Precision Recall Curves for training and testing datasets on different models. The curve above the other curve has a better performance level.
+  - The above two figures show Precision Recall Curves for training and testing datasets on different models. A curve above the other curve always has a better performance level.
   - First figure shows the XGBClassifier model as performing the best but it is clearly overfitting to the data as seen in the second figure where the GridSearchCV i.e. the hypertuned and cross-validated model comes on top.  
 
 ### Conclusion:  
